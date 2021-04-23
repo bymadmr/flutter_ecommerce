@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_ecommerce/widgets/productlistrow.dart';
 
 class ProductList extends StatelessWidget {
   BuildContext context;
@@ -29,7 +30,7 @@ class ProductList extends StatelessWidget {
           } else if (index == 4) {
             return Text("Son kısım");
           } else {
-            return Text("Ürünler");
+            return _buildProductListRow();
           }
         },
         itemCount: 5,
@@ -76,5 +77,15 @@ class ProductList extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  _buildProductListRow() {
+    return ProductListRow(
+        name: "Kazak",
+        currentPrice: 150,
+        orginalPrice: 300,
+        discount: 50,
+        imageUrl:
+            "https://lp2.hm.com/hmgoepprod?set=quality%5B79%5D%2Csource%5B%2F8f%2F77%2F8f77b54f31d9c9bcfde28443b095a4ea591b566a.jpg%5D%2Corigin%5Bdam%5D%2Ccategory%5Bmen_hoodiessweatshirts_hoodies%5D%2Ctype%5BDESCRIPTIVESTILLLIFE%5D%2Cres%5Bm%5D%2Chmver%5B1%5D&call=url[file:/product/main]");
   }
 }
