@@ -38,6 +38,56 @@ class ProductListRow extends StatelessWidget {
               height: 250,
               width: MediaQuery.of(context).size.width / 2.2,
             ),
+            SizedBox(
+              height: 5,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 5),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    this.name,
+                    style: TextStyle(fontSize: 15, color: Colors.grey),
+                  ),
+                  SizedBox(
+                    height: 2,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        "\$$currentPrice",
+                        style: TextStyle(fontSize: 16, color: Colors.black),
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        "\$$orginalPrice",
+                        style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.grey,
+                            decoration: TextDecoration.lineThrough),
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                      Text(
+                        "$discount\% indirim",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 5,
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),

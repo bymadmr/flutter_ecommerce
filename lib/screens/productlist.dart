@@ -28,7 +28,9 @@ class ProductList extends StatelessWidget {
           if (index == 0) {
             return _buildFilterWidgets(screenSize);
           } else if (index == 4) {
-            return Text("Son kısım");
+            return SizedBox(
+              height: 12,
+            );
           } else {
             return _buildProductListRow();
           }
@@ -64,6 +66,9 @@ class ProductList extends StatelessWidget {
 
   _buildFilterButton(String title) {
     return InkWell(
+      onTap: () {
+        print(title);
+      },
       child: Row(
         children: <Widget>[
           Icon(
