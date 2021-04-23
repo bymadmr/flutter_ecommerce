@@ -27,9 +27,9 @@ class ProductList extends StatelessWidget {
           if (index == 0) {
             return _buildFilterWidgets(screenSize);
           } else if (index == 4) {
-            return _buildFilterWidgets(screenSize);
+            return Text("Son kısım");
           } else {
-            return _buildFilterWidgets(screenSize);
+            return Text("Ürünler");
           }
         },
         itemCount: 5,
@@ -37,5 +37,44 @@ class ProductList extends StatelessWidget {
     );
   }
 
-  _buildFilterWidgets(Size screenSize) {}
+  _buildFilterWidgets(Size screenSize) {
+    return Container(
+      margin: EdgeInsets.all(10),
+      width: screenSize.width,
+      child: Card(
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 12),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              _buildFilterButton("Sırala"),
+              Container(
+                color: Colors.black,
+                width: 2,
+                height: 24,
+              ),
+              _buildFilterButton("Filtrele"),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  _buildFilterButton(String title) {
+    return InkWell(
+      child: Row(
+        children: <Widget>[
+          Icon(
+            Icons.arrow_drop_down,
+            color: Colors.black,
+          ),
+          SizedBox(
+            width: 2,
+          ),
+          Text(title)
+        ],
+      ),
+    );
+  }
 }
